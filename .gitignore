@@ -1,2 +1,17 @@
+# Entorno y variables
 .env
+.env*
 .env.example
+
+# Bases de datos locales
+*.db
+*.sqlite
+*.sqlite3
+
+# Carpetas de datos locales, registros y respaldos
+/Entrada/
+/Salida/
+/Registros/
+/respaldos/
+/Backend/respaldos/
+/Backend/Base_Datos/respaldo
