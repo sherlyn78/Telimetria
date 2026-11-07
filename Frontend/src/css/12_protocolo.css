@@ -1,0 +1,31 @@
+/* 12_protocolo: la lista de archivos de la carpeta de Protocolo que arma 09_protocolo.js dentro del modal.
+   Los nombres de estos archivos suelen ser largos, asi que la columna del centro se corta con puntos. */
+.pr-lista{display:flex;flex-direction:column;gap:6px;max-height:52vh;overflow:auto;padding-right:2px}
+.pr-item{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:12px;width:100%;
+  text-align:left;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer}
+.pr-item:hover{border-color:#14305a;background:#f7f9fc}
+.pr-item:disabled{opacity:.55;cursor:default}
+.pr-item.usada{background:var(--green-soft)}
+.pr-n{font-size:12px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pr-d,.pr-e{font-size:11px;color:var(--muted);white-space:nowrap}
+.pr-e{font-weight:600}
+.modal .mf .proto-sub{font-size:11px}
+@media(max-width:650px){
+  .pr-item{grid-template-columns:minmax(0,1fr) auto}
+  .pr-item .pr-d{display:none}
+}
+
+/* 10_resumen_protocolo: la tarjeta "Protocolos realizados" (`.kpi.clic`) se selecciona y abre la ventana
+   de los cuatro grupos. Los chips son el filtro del grupo; el resto es una tabla de eventos normal. */
+.kpi.clic{cursor:pointer}
+.kpi.clic:hover{border-color:var(--green);box-shadow:0 2px 10px rgba(20,48,90,.12)}
+.kpi.clic:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.prs-chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--line)}
+.prs-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border:1px solid var(--line);
+  border-radius:999px;background:#fff;font:inherit;font-size:12px;color:var(--muted);cursor:pointer}
+.prs-chip b{font-size:12px;color:var(--ink)}
+.prs-chip:hover{border-color:#14305a}
+.prs-chip.on{background:var(--green-soft);border-color:var(--green);color:var(--ink);font-weight:600}
+.prs-t table td .proto{flex-wrap:nowrap}
+.prs-desc{color:var(--wine);font-weight:600;white-space:nowrap}
+@media(max-width:650px){.prs-chips{padding:8px 10px}.prs-chip{font-size:11px;padding:4px 8px}}

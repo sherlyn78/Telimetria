@@ -1,0 +1,9 @@
+/* 02_base: reset, body, foco, tipografia base */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,system-ui,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.45}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+body{font-family:var(--font-body);letter-spacing:0;font-size:13px}
+h1,h2,h3,.brand b,.kpi .v{font-family:var(--font-heading);letter-spacing:0}

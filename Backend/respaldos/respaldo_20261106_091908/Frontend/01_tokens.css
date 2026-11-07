@@ -1,0 +1,8 @@
+/* 01_tokens: colores, tipografias y sombras (variables :root) */
+:root{
+  --green:oklch(0.36 0.065 258); --green-d:oklch(0.27 0.055 258); --green-bar:oklch(0.47 0.08 258); --green-soft:oklch(0.96 0.012 258);
+  --wine:oklch(0.50 0.15 25); --amber:oklch(0.62 0.11 70); --slate:oklch(0.55 0.02 250);
+  --bg:oklch(0.975 0.004 250); --card:oklch(1 0 0); --ink:oklch(0.24 0.02 250); --muted:oklch(0.55 0.015 240); --line:oklch(0.925 0.008 245);
+  --shadow:0 1px 2px rgba(20,32,26,.06),0 4px 14px rgba(20,32,26,.05);
+}
+:root{--surface:oklch(1 0 0);--nav-surface:oklch(.26 .045 258);--nav-ink:oklch(.82 .02 255);--risk-soft:oklch(.95 .03 25);--neutral-soft:oklch(.955 .008 245);--green-soft:oklch(.95 .015 258);--line:oklch(.925 .008 245);--shadow:0 1px 3px oklch(.24 .02 250 / .06);--radius:6px;--font-body:'Inter',system-ui,sans-serif;--font-heading:'Manrope',system-ui,sans-serif}

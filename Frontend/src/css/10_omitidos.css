@@ -1,0 +1,10 @@
+/* 10_omitidos: modal de eventos omitidos y botones de estatus */
+.modal.ancha{width:min(1180px,96vw)}
+.mh h3{margin:0}
+.mh small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.om-t{margin-top:4px;max-height:60vh}
+.om-t table td,.om-t table th{white-space:nowrap}
+.est{display:inline-flex;gap:4px}
+.est button{border:1px solid var(--line);background:#fff;border-radius:6px;padding:5px 9px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer}
+.est button:hover{background:var(--green-soft)}
+.est button[aria-pressed="true"].Descartada{background:#9b9b9b;border-color:#808080;color:#fff}

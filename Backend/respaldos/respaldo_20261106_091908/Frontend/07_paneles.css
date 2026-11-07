@@ -1,0 +1,53 @@
+/* 07_paneles: drawer del boletin y modal del correo */
+.overlay{position:fixed;inset:0;background:rgba(10,24,16,.42);z-index:60;opacity:0;pointer-events:none;transition:opacity .2s}
+.overlay.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:#fff;z-index:70;transform:translateX(100%);transition:transform .25s ease;box-shadow:-12px 0 32px rgba(0,0,0,.15);display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.drawer header{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+.drawer header h3{margin:0;font-size:17px}
+.drawer header p{margin:0;color:var(--muted);font-size:13px}
+.drawer .body{padding:18px 20px;overflow-y:auto;flex:1}
+.drawer h4{margin:20px 0 8px;font-size:13px;font-weight:600}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat span{display:block;font-size:12px;color:var(--muted)}
+.stat b{font-size:20px;color:var(--green)}
+.stat b.w{color:var(--wine)}
+.bars-row{display:grid;grid-template-columns:150px 1fr 46px;gap:8px;align-items:center;font-size:12px;margin:5px 0}
+button.bars-row{width:100%;background:none;border:0;padding:4px 6px;margin-left:-6px;border-radius:8px;font:inherit;color:inherit;text-align:start;cursor:pointer}
+button.bars-row:hover{background:var(--neutral-soft)}
+button.bars-row[aria-pressed="true"]{background:var(--green-soft)}
+button.bars-row[aria-pressed="true"] i{background:var(--wine)}
+.drawer h4{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.btn.link{background:none;border:0;padding:2px 4px;color:var(--wine);font-size:11px}
+.stat b.sm{font-size:14px}
+.bars-row i{display:block;height:8px;border-radius:4px;background:var(--green-bar)}
+.bars-row .t{background:#edf2ee;border-radius:4px}
+.last li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;list-style:none}
+.last{padding:0;margin:0}
+.last small{color:var(--muted);display:block}
+/* Reales y Descartadas son dos casillas mas: seis datos, tres filas de dos. */
+.minileg{display:flex;flex-wrap:wrap;gap:3px 12px;margin-top:7px;font-size:11px;color:var(--muted)}
+.minileg span{display:inline-flex;align-items:center;gap:5px}
+.minileg i{width:9px;height:9px;border-radius:3px;flex:none}
+.bars-row b small{display:block;font-size:10px;font-weight:500;color:var(--muted)}
+.last li.desc{opacity:.55}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-48%);width:min(680px,94vw);max-height:92vh;overflow:auto;background:#fff;border-radius:14px;z-index:80;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.modal .mh{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.modal .mh h3{margin:0;font-size:16px}
+.modal .mb{padding:16px 20px}
+.modal .mf{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end}
+.modal input[type=text]{width:100%;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 10px;margin:4px 0 14px}
+.mail{border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px}
+.mail .mt{background:var(--green);color:#fff;padding:14px 18px}
+.mail .mt b{display:block;font-size:15px}
+.mail .mc{padding:16px 18px}
+.mk{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.mk div{border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.mk span{font-size:11px;color:var(--muted);display:block}
+.mk b{font-size:18px}
+.drawer,.modal{color:var(--ink)}
+.modal{border-radius:8px}
+.drawer h3{font-family:var(--font-heading)}

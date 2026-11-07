@@ -1,0 +1,86 @@
+/* 09_estudio: filtros de selección múltiple + cinta de diseño de gráficas (estilo Excel) */
+
+/* ---- Filtros ---- */
+.fld{display:flex;flex-direction:column;gap:5px;min-width:0}
+.fld>span{font-size:10px;color:var(--muted);font-weight:500}
+.ms{position:relative;min-width:0}
+.ms-btn{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%;height:36px;padding:0 8px 0 10px;border:1px solid transparent;border-radius:5px;background:var(--neutral-soft);font-size:11px;color:var(--ink);text-align:left}
+.ms-btn:hover{border-color:var(--line);background:#fff}
+.ms-btn[aria-expanded="true"]{background:#fff;border-color:var(--green)}
+.ms-btn:disabled{opacity:.55;cursor:not-allowed}
+.ms-btn svg{flex:none;color:var(--muted)}
+.ms-lab{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ms-lab.on{color:var(--green);font-weight:600}
+.ms-pop{position:absolute;z-index:50;top:calc(100% + 4px);left:0;min-width:max(100%,200px);background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 30px rgba(15,23,42,.18);padding:6px}
+.ms-list{max-height:250px;overflow-y:auto;border-top:1px solid var(--line);margin-top:4px;padding-top:4px}
+.ms-it{display:flex;align-items:center;gap:9px;padding:8px 8px;border-radius:5px;font-size:12px;cursor:pointer;white-space:nowrap}
+.ms-it:hover{background:var(--green-soft)}
+.ms-it input{width:16px;height:16px;accent-color:var(--green);flex:none;margin:0}
+.ms-todos{font-weight:600}
+.cmp-ms{display:flex;align-items:center;gap:8px;flex:1;min-width:230px}
+.cmp-ms .ms{flex:1}
+.cmp-ms .ms-btn{height:40px;border:1px solid var(--line);background:#fff;font-size:12px}
+.a-dot,.b-dot{width:10px;height:10px;border-radius:50%;flex:none}
+.a-dot{background:var(--green)}.b-dot{background:var(--wine)}
+/* El alcance por TAD no es un lado A/B, va aparte y mas angosto que los selectores de comparacion. */
+.cmp-ms-scope{flex:0 1 260px}
+.scope-dot{width:10px;height:10px;border-radius:3px;flex:none;background:#14305a}
+.filters .row{align-items:end}
+
+/* ---- Estudio de gráficas ---- */
+.chart-first{grid-template-columns:minmax(0,1.75fr) minmax(0,1fr)!important}
+.cs{display:flex;flex-direction:column;gap:12px}
+.cs-quick{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-quick:empty{display:none}
+.cs-quick>span{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.6px}
+.cs-quick .seg button{font-size:12px;padding:8px 14px}
+.cs-tipos{flex-wrap:wrap}
+.cs-quick-fin{flex:1 1 auto;min-width:0}
+.cs-dis{display:inline-flex;align-items:center;gap:6px}
+.cs-dis[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.cs-bar{display:flex;gap:2px;flex-wrap:wrap;align-items:stretch;background:var(--neutral-soft);border:1px solid var(--line);border-radius:8px;padding:4px}
+.cs-bar[hidden]{display:none}
+.cs-wrap{position:relative;display:flex}
+.cs-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:76px;padding:8px 8px 7px;background:none;border:1px solid transparent;border-radius:6px;font-size:12px;font-weight:600;color:var(--ink);line-height:1.1}
+.cs-btn svg{color:var(--green)}
+.cs-btn i{display:inline-flex;margin-left:3px;opacity:.6;vertical-align:middle}
+.cs-btn:hover{background:#fff;border-color:var(--line)}
+.cs-btn.on{background:#fff;border-color:var(--green);box-shadow:0 2px 8px rgba(15,23,42,.1)}
+.cs-sep{width:1px;background:var(--line);margin:6px 4px}
+.cs-pop{position:absolute;z-index:45;top:calc(100% + 6px);left:0;width:min(340px,86vw);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 14px 36px rgba(15,23,42,.2);padding:14px;font-size:12px;color:var(--ink)}
+.cs-pop.r{left:auto;right:0}
+.cs-pop h5{margin:0 0 10px;font-size:13px;font-family:var(--font-heading);font-weight:700}
+.cs-grid{display:grid;gap:8px}
+.cs-grid.g4{grid-template-columns:repeat(4,1fr)}
+.cs-grid.g3{grid-template-columns:repeat(3,1fr)}
+.cs-opt,.cs-sty{display:flex;flex-direction:column;align-items:center;gap:6px;padding:9px 4px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:11px;font-weight:500;color:var(--ink)}
+.cs-opt svg{color:var(--green)}
+.cs-sty svg{display:block;border-radius:4px;border:1px solid var(--line);max-width:100%}
+.cs-opt:hover,.cs-sty:hover,.cs-pal:hover,.cs-item:hover{background:var(--green-soft)}
+.cs-opt.on,.cs-sty.on,.cs-pal.on{border-color:var(--green);background:var(--green-soft);color:var(--green);font-weight:700}
+.cs-pal{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:8px 10px;margin-bottom:6px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:12px;text-align:left}
+.cs-pal .sw{display:flex}
+.cs-pal .sw i{width:20px;height:20px;border-radius:50%;margin-right:-5px;border:2px solid #fff}
+.cs-chk{display:flex;align-items:center;gap:10px;padding:7px 4px;font-size:12.5px;cursor:pointer;border-radius:5px}
+.cs-chk:hover{background:var(--green-soft)}
+.cs-chk input{width:16px;height:16px;accent-color:var(--green);margin:0}
+.cs-chk.dis{opacity:.4;cursor:not-allowed}
+.cs-field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;flex:1;min-width:0}
+.cs-field>span{font-size:11px;color:var(--muted);font-weight:600}
+.cs-field select,.cs-field input{height:36px;border:1px solid var(--line);border-radius:6px;padding:0 9px;background:#fff;font-size:12.5px;width:100%}
+.cs-row{display:flex;gap:10px;margin-top:6px}
+.cs-item{display:flex;align-items:center;gap:12px;width:100%;padding:10px;border:0;background:none;border-radius:8px;text-align:left}
+.cs-item svg{color:var(--green);flex:none}
+.cs-item b{display:block;font-size:12.5px}
+.cs-item small{display:block;color:var(--muted);font-size:11px;margin-top:1px}
+/* Al elegir una descarga del estudio (PNG, CSV, copiar) el renglon se pone de color. */
+.cs-item:active,.cs-item:focus-visible{background:var(--green);color:#fff}
+.cs-item:active svg,.cs-item:focus-visible svg{color:#fff}
+.cs-item:active small,.cs-item:focus-visible small{color:#d7e0f0}
+.cs-box{position:relative;border-radius:8px;border:1px solid var(--line);overflow:hidden;padding:6px 10px}
+.cs-box canvas{display:block;max-width:100%}
+.cs-empty{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;font-size:13px}
+.cs-empty[hidden]{display:none}
+.cmp-graf{margin-top:18px}
+@media (max-width:1180px){.chart-first{grid-template-columns:1fr!important}}
+@media (max-width:650px){.cs-btn{min-width:64px;font-size:11px}.cs-pop,.cs-pop.r{position:fixed;left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:70vh;overflow:auto}}
